@@ -31,18 +31,45 @@
 		});
 
 	// Forms.
+		$("#mail-chimp-form").submit(function(event) {
+			event.stopPropagation();
+			event.preventDefault();
+			$.ajax({
+			  type: 'POST',
+			  url: $("form").attr("action"),
+			  data: $("#mail-chimp-form").serialize(),
+			  dataType: 'jsonp',
+			  //or your custom data either as object {foo: "bar", ...} or foo=bar&...
+			  success: function(response) {
+			  	$("#submission-result").removeClass().empty();
 
-		// Hack: Activate non-input submits.
-			$('form').on('click', '.submit', function(event) {
+			  	console.log(response);
+			  	if(response.result === "success") {
+			  		$("#submission-result").addClass("icon fa-check-circle").css('color', '#7fd13b').css('font-size', '150%');
+			  	} else {
 
-				// Stop propagation, default.
-					event.stopPropagation();
-					event.preventDefault();
-
-				// Submit form.
-					$(this).parents('form').submit();
+			  		$("#submission-result").addClass("icon fa-times-circle").css('color', '#f0ad00').css('font-size', '150%');
+			  		if(response.msg.includes('is already subscribed to list')){
+			  			$("#submission-result").text("Vous êtes déjà enregistré!");
+			  		} else if(response.msg.includes('the email address is invalid')){
+			  			$("#submission-result").text("Adresse invalide");
+			  		}
+			  	}
+			  }
 
 			});
+		});
+		// Hack: Activate non-input submits.
+			// $('form').on('click', '.submit', function(event) {
+
+			// 	// Stop propagation, default.
+			// 		event.stopPropagation();
+			// 		event.preventDefault();
+
+			// 	// Submit form.
+			// 		$(this).parents('form').submit();
+
+			// });
 
 	// Sidebar.
 		if ($sidebar.length > 0) {
@@ -166,6 +193,7 @@
 					$img.hide();
 
 			});
+
 
 	// Features.
 		$('.features')
