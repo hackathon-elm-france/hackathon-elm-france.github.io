@@ -2612,6 +2612,10 @@ input, select, textarea {
             .image.main img {
                 width: 100%;
             }
+        .image.with-margin {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
 
 /* List */
 
