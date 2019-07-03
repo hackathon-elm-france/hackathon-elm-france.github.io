@@ -1,1 +1,1 @@
-# hackaton-elm-france.github.io
+# https://hackathon-elm-france.github.io
