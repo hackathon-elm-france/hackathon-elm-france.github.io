@@ -2958,11 +2958,11 @@ input, select, textarea {
         }
 
         .split.style1 > :nth-child(2n - 1) {
-            width: calc(66.66666% - 2.5em);
+            width: calc(50% - 2.5em);
         }
 
         .split.style1 > :nth-child(2n) {
-            width: calc(33.33333% - 2.5em);
+            width: calc(50% - 2.5em);
         }
 
         @media screen and (max-width: 1680px) {
@@ -2980,11 +2980,11 @@ input, select, textarea {
             }
 
             .split.style1 > :nth-child(2n - 1) {
-                width: calc(66.66666% - 2em);
+                width: calc(50% - 2em);
             }
 
             .split.style1 > :nth-child(2n) {
-                width: calc(33.33333% - 2em);
+                width: calc(50% - 2em);
             }
 
         }
