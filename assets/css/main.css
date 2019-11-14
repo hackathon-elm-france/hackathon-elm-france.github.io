@@ -3958,3 +3958,11 @@ input, select, textarea {
     background-color: #231BAB;
     min-width: 40%;
 }
+
+.organizer {
+    display: flex;
+    justify-content: center;
+}
+.roundedImage{
+    border-radius: 50%;
+}
