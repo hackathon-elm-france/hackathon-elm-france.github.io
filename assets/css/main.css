@@ -3963,6 +3963,12 @@ input, select, textarea {
     display: flex;
     justify-content: center;
 }
+
+.organizer p {
+	width: 250px;
+	padding-top: 80px;
+	padding-left: 30px;
+}
 .roundedImage{
     border-radius: 50%;
 }
